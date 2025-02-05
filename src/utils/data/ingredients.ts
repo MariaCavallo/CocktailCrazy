@@ -1,0 +1,47 @@
+interface Ingredient {
+    ingredient_id: string;
+    name: string;
+    image_url: string;
+}
+
+export const ingredients: Ingredient[] = [
+    { ingredient_id: "1", name: "Tequila", image_url: "https://lasvizcarras.com.uy/contents/uploads/2020/06/901584-MLU41853132283_052020-F.jpg" },
+    { ingredient_id: "2", name: "Triple Sec", image_url: "https://iber.uy/web/image/product.template/6058/image?unique=ff9ad24" },
+    { ingredient_id: "3", name: "Jugo de Lima", image_url: "https://upload.wikimedia.org/wikipedia/commons/2/29/Lime_juice_3.jpg" },
+    { ingredient_id: "4", name: "Ron blanco", image_url: "https://lasvizcarras.com.uy/contents/uploads/2022/08/Havana-club-3anos-650x650.jpg" },
+    { ingredient_id: "5", name: "Hojas de Menta", image_url: "https://images.pexels.com/photos/7855278/pexels-photo-7855278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { ingredient_id: "6", name: "Azúcar", image_url: "https://empresasiansa.cl/wp-content/uploads/2020/02/azucar-1024x683.jpg" },
+    { ingredient_id: "7", name: "Whisky", image_url: "https://images.pexels.com/photos/543725/pexels-photo-543725.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { ingredient_id: "8", name: "Amargos de Angostura", image_url: "https://lasvizcarras.com.uy/contents/uploads/2020/06/877223-MLU42297465198_062020-F.jpg" },
+    { ingredient_id: "9", name: "Jugo de Piña", image_url: "https://img.freepik.com/fotos-premium/jugo-pina_489827-1379.jpg?w=740" },
+    { ingredient_id: "10", name: "Crema de Coco", image_url: "https://images.pexels.com/photos/725998/pexels-photo-725998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { ingredient_id: "11", name: "Ginebra", image_url: "https://lasvizcarras.com.uy/contents/uploads/2022/01/gin-tanqueray-ten.jpg" },
+    { ingredient_id: "12", name: "Vermut", image_url: "https://lasvizcarras.com.uy/contents/uploads/2020/04/martin-fierro-bianco.jpg" },
+    { ingredient_id: "13", name: "Vodka", image_url: "https://lasvizcarras.com.uy/contents/uploads/2023/10/Smirnoff-roja-750-ml.jpg" },
+    { ingredient_id: "14", name: "Cerveza de Jengibre", image_url: "https://www.fentimansca.com/cdn/shop/files/fentimans_275ml_GingerBeer.png?v=1718287729" },
+    { ingredient_id: "15", name: "Jugo de Arándano", image_url: "https://images.pexels.com/photos/6671856/pexels-photo-6671856.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { ingredient_id: "16", name: "Jugo de Tomate", image_url: "https://img.freepik.com/free-photo/fresh-tomato-juice-macro-shot_53876-65295.jpg?t=st=1724195698~exp=1724199298~hmac=91fb642c478b24ed65e24069e98f4e99f66e370f688590c2d29376044eef541a&w=360" },
+    { ingredient_id: "17", name: "Cachaça", image_url: "https://lasvizcarras.com.uy/contents/uploads/2021/10/Cachaza-Velho-Barreiro.jpg" },
+    { ingredient_id: "18", name: "Jugo de Limón", image_url: "https://img.freepik.com/free-photo/lemon-juice-glass-container-with-fruits-wooden-table_114579-11593.jpg?t=st=1724195777~exp=1724199377~hmac=7612772fbe3d861703aca578522570d7d9ca0401268efbcbb6071f71ecd9b852&w=740" },
+    { ingredient_id: "19", name: "Prosecco", image_url: "https://lasvizcarras.com.uy/contents/uploads/2021/06/Prosecco-Bolla.jpg" },
+    { ingredient_id: "20", name: "Puré de Durazno", image_url: "https://img.freepik.com/free-photo/high-angle-peach-milkshake-glass-with-fruit_23-2148707776.jpg?t=st=1724195915~exp=1724199515~hmac=887298f59fb68ccdb78f6a633f8477e36c8805e94c025c032f0fca9a48229f6f&w=740" },
+    { ingredient_id: "21", name: "Jarabe de azúcar", image_url: "https://imag.bonviveur.com/jarabe-de-azucar-o-de-goma-casero.webp" },
+    { ingredient_id: "22", name: "Bourbon", image_url: "https://lasvizcarras.com.uy/contents/uploads/2020/06/639746-MLU41949557041_052020-F.jpg" },
+    { ingredient_id: "23", name: "Soda", image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/T%C3%B3nica_Schweppes.jpg/800px-T%C3%B3nica_Schweppes.jpg" },
+    { ingredient_id: "24", name: "Hielo", image_url: "https://hielosmairena.com/wp-content/uploads/2019/04/cosas-sobre-el-hielo-1254x627.jpg" },
+    { ingredient_id: "25", name: "Cáscara de naranja", image_url: "https://www.naranjasquique.com/blog/wp-content/uploads/2019/03/cascara-de-naranja.jpg" },
+    { ingredient_id: "26", name: "Cáscara de limón", image_url: "https://mejorconsalud.as.com/wp-content/uploads/2017/10/corteza-limon-usos-medicinales.jpg?auto=webp&quality=60&width=1920&crop=16:9,smart,safe" },
+    { ingredient_id: "28", name: "Aceituna verde", image_url: "https://img.freepik.com/free-photo/green-olives-bowl-wooden-table_123827-30040.jpg?t=st=1724773138~exp=1724776738~hmac=a03334b58b6516f4c568d7668334e41af6bd09f2a5762815711a92f5a1bf67d5&w=740" },
+    { ingredient_id: "29", name: "Sal fina", image_url: "https://img.freepik.com/free-photo/sea-salt-coming-out-salt-shaker_176474-1689.jpg?t=st=1724773185~exp=1724776785~hmac=69043e7eee03b83c56d0cca221cda73690477d4f207540ee4a58f7d8bed403d9&w=740" },
+    { ingredient_id: "30", name: "Rodaja de lima", image_url: "https://images.pexels.com/photos/214173/pexels-photo-214173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { ingredient_id: "32", name: "Leche de coco", image_url: "https://img.freepik.com/free-photo/coconut-milk_144627-22192.jpg?t=st=1724773244~exp=1724776844~hmac=b3e85ba2c48b4d215815ae8635d79bfedc0ae59f6127517eb049bb088f8d849d&w=740" },
+    { ingredient_id: "33", name: "Rodaja de piña", image_url: "https://img.freepik.com/free-photo/top-view-delicious-pineapple-still-life_23-2150408046.jpg?t=st=1724773284~exp=1724776884~hmac=742de1b24613c314a5d75994d5d45b12eaa98d6a42c1b3d703a3d3d412d3d633&w=740" },
+    { ingredient_id: "34", name: "Guinda", image_url: "https://img.freepik.com/free-photo/cherries-vase-pink-grungy-surface_176474-6320.jpg?t=st=1724773395~exp=1724776995~hmac=e5ce739b1349ae4d1c9527c674bf4982ba4cef00763964e5023a52900bde740f&w=360" },
+    { ingredient_id: "35", name: "Campari", image_url: "https://lasvizcarras.com.uy/contents/uploads/2020/06/813989-MLU41832773575_052020-F.jpg" },
+    { ingredient_id: "36", name: "Vermut rojo", image_url: "https://lasvizcarras.com.uy/contents/uploads/2020/04/martini-rosso-1.jpg" },
+    { ingredient_id: "37", name: "Rodaja de naranja", image_url: "https://images.pexels.com/photos/4022110/pexels-photo-4022110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { ingredient_id: "38", name: "Tabasco", image_url: "https://abarrotes.es/blog/wp-content/uploads/2022/02/salsa-picante-tabasco-ingredientes-curiosidades-1200x800.jpg" },
+    { ingredient_id: "39", name: "Tallo de apio", image_url: "https://img.freepik.com/free-photo/close-up-fresh-celery-green-wooden-background_23-2147927245.jpg?t=st=1724773842~exp=1724777442~hmac=bad5589a5cb1f20d00da13f0d514fb39fec4d9b5c9cb6262dc7ebe885633d613&w=360" },
+    { ingredient_id: "40", name: "Salsa Worcestershire", image_url: "https://www.elnaranjo.com.uy/cpanelBW/imagesBW/3907.jpg" },
+    { ingredient_id: "41", name: "Lima", image_url: "https://img.freepik.com/fotos-premium/como-papel-tapiz-fondo-cal-parte-superior-vista_624310-600.jpg?w=360"},
+]

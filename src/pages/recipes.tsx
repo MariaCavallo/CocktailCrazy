@@ -6,11 +6,12 @@ import Link from 'next/link';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 type Cocktail = {
-    cocktail_id: number;
+    cocktail_id: string;
     name: string;
     description: string;
     country: string;
     image_url: string;
+    instructions: string[];
 };
 
 const Recipes = () => {
