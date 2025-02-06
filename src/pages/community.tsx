@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { Form } from "@heroui/form";
+import { Toaster, toast } from 'mui-sonner';
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 const testimonials = [
@@ -38,9 +39,88 @@ const testimonials = [
 
 ];
 
-const Community = () => {
+export const Community = () => {
+
+    const [userName, setUserName] = useState('');
+    const [userLastName, setUserLastName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [userCountry, setUserCountry] = useState('');
+    const [userComment, setUserComment] = useState('');
+
+    useEffect(() => {
+        const savedData = localStorage.getItem("userData");
+        if (savedData) {
+            const parsedData = JSON.parse(savedData);
+            setUserName(parsedData.userName);
+            setUserLastName(parsedData.userLastName);
+            setUserEmail(parsedData.userEmail);
+            setUserCountry(parsedData.userCountry);
+            setUserComment(parsedData.userComment);
+        }
+    }, []);
+
+    const handleUserNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUserName(e.target.value)
+    };
+
+    const handleUserLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUserLastName(e.target.value)
+    };
+
+    const handleUserEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUserEmail(e.target.value)
+    };
+
+    const handleUserCountryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUserCountry(e.target.value)
+    };
+
+    const handleUserCommentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setUserComment(e.target.value)
+    };
+
+    const validateEmail = (email: string) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (userName.length < 3 || userName.length > 20) {
+            toast.error('El Nombre debe tener entre 3 y 20 caracteres');
+            return;
+        }
+        if (userLastName.length < 3 || userLastName.length > 20) {
+            toast.error('El Apellido debe tener entre 3 y 20 caracteres');
+            return;
+        }
+        if (!validateEmail(userEmail)) {
+            toast.error('Correo Electrónico inválido');
+            return;
+        }
+        if (userCountry.length < 3 || userCountry.length > 20) {
+            toast.error('El País debe tener entre 3 y 20 caracteres');
+            return;
+        }
+        if (userComment.length <= 10) {
+            toast.error('El Comentario debe tener al menos 10 caracteres');
+            return;
+        }
+        const userData = {
+            userName,
+            userLastName,
+            userEmail,
+            userCountry,
+            userComment
+        };
+        localStorage.setItem("userCommentData", JSON.stringify(userData));
+        toast.success('Comentario enviado con éxito!');
+        e.currentTarget.reset();
+    };
+
     return (
         <div>
+            <Toaster />
             <h3 className="mx-8 mt-8 text-4xl text-center">Nuestra Comunidad</h3>
             <div className="h-[30rem] rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
                 <InfiniteMovingCards
@@ -52,8 +132,7 @@ const Community = () => {
             <div>
                 <h3 className="mx-8 mt-8 text-3xl text-center">¡Se parte de nuestra comunidad y envíanos tus comentarios!</h3>
                 <div className="">
-                    {/* TODO arreglar el formulario */}
-                    <Form method="post" className="mx-8 my-8 grid grid-cols-2 gap-8" onSubmit={(data) => console.log(data)}>
+                    <Form method="post" className="mx-8 my-8 grid grid-cols-2 gap-8" onSubmit={handleSubmit}>
                         <Input
                             className=""
                             variant="flat"
@@ -62,6 +141,8 @@ const Community = () => {
                             placeholder="Escribe tu nombre"
                             type="text"
                             isRequired
+                            value={userName}
+                            onChange={handleUserNameChange}
                             minLength={3}
                             maxLength={20}
                         />
@@ -73,6 +154,8 @@ const Community = () => {
                             placeholder="Escribe tu apellido"
                             type="text"
                             isRequired
+                            value={userLastName}
+                            onChange={handleUserLastNameChange}
                             minLength={3}
                             maxLength={20}
                         />
@@ -83,6 +166,8 @@ const Community = () => {
                             placeholder="Escribe tu correo electrónico"
                             type="email"
                             isRequired
+                            value={userEmail}
+                            onChange={handleUserEmailChange}
                             minLength={5}
                             maxLength={50} 
                         />
@@ -93,6 +178,8 @@ const Community = () => {
                             placeholder="Escribe tu país"
                             type="text"
                             isRequired
+                            value={userCountry}
+                            onChange={handleUserCountryChange}
                             minLength={3}
                             maxLength={20}
                         />
@@ -104,7 +191,9 @@ const Community = () => {
                             placeholder="Escribe tu comentario"
                             type="text"
                             isRequired
-                            minLength={5}
+                            value={userComment}
+                            onChange={handleUserCommentChange}
+                            minLength={5}   
                             maxLength={800}
                         />
                         <Button
