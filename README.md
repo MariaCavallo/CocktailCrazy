@@ -24,8 +24,7 @@
 Este proyecto fue desarrollado utilizando las siguientes tecnologías:
 
 - **Next.js**: Framework de React para la creación de aplicaciones web.
-- **Supabase**: Base de datos en tiempo real y autenticación.
-- **NextUI**: Librería de componentes para una UI moderna.
+- **NextUI y MaterialUI**: Librería de componentes para una UI moderna.
 - **Axios**: Para manejar las solicitudes HTTP.
 
 ## Instalación
